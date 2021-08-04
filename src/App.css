@@ -14,6 +14,7 @@
 
 body {
     background: #000;
+    overflow: hidden;
 }
 
 section {
@@ -95,6 +96,47 @@ nav > ul > li > a:hover {
     background-repeat: no-repeat;
 }
 
+#loading {
+    display: flex;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    overflow: hidden;
+    z-index: 100;
+    transition: opacity 1000ms, z-index 500ms;
+    justify-content: center;
+    align-items: center;
+}
+
+#emblem-clean {
+    background: url("emblem_clean.png");
+    width: 100px;
+    height: 100px;
+    background-size: 100%;
+    animation: scale 300ms infinite alternate;
+}
+
+.scroll {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.fade-out {
+    opacity: 0;
+    z-index: -1 !important;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
 /************************************
 *              BANNER               *
 ************************************/
@@ -108,7 +150,12 @@ nav > ul > li > a:hover {
 
 #emblem {
     user-select: none;
-    filter: drop-shadow(2px 4px 6px black)
+    filter: drop-shadow(2px 4px 6px black);
+    transition: transform 300ms;
+}
+
+#emblem:hover {
+    transform: scale(1.1);
 }
 
 #logo {
@@ -129,11 +176,12 @@ nav > ul > li > a:hover {
     width: 90px;
     height: 90px;
     padding: 0 120px;
-    transition: opacity 300ms;
+    transition: opacity 300ms, transform 300ms;
     cursor: pointer;
 }
 
 .music-link:hover {
+    transform: scale(0.9);
     opacity: 0.5
 }
 
@@ -215,6 +263,10 @@ nav > ul > li > a:hover {
     transform: scale(85%);
 }
 
+
+/************************************
+*             TOUR                  *
+************************************/
 #tour {
     flex-flow: column;
 }
@@ -340,6 +392,9 @@ a.show {
     transform: scale(1.15);
 }
 
+/************************************
+*             FOOTER                *
+************************************/
 footer {
     padding: 20px;
     background: #000;
@@ -364,9 +419,15 @@ footer {
     height: 30px;
     filter: invert(1);
     margin: 0px 10px 20px 10px;
+    transition: opacity 300ms, transform 300ms;
 }
 
-.footer-social-img {
+.footer-social:hover {
+    opacity: 0.5;
+    transform: scale(0.9);
+}
+
+.footer-social > img {
     width: 100%;
     height: 100%;
 }

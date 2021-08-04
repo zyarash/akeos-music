@@ -1,15 +1,43 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { MAILING_LIST_LINK, SOCIAL_LINKS, RELEASES} from "./CONSTANTS";
+import { MAILING_LIST_LINK, MUSIC_LINKS, SOCIAL_LINKS, RELEASES} from "./CONSTANTS";
 
 
 class App extends Component {
 
     constructor(props) {
         super(props);
+        this.displayLoading = this.displayLoading.bind(this);
         this.displayFooterSocials = this.displayFooterSocials.bind(this);
+        this.displayStreamingLinks = this.displayStreamingLinks.bind(this);
         this.displayMusic = this.displayMusic.bind(this);
+        this.handleScroll = this.handleScroll.bind(this);
+        this.state = { loaded: 0 };
+    }
+
+    componentDidMount() {
+        let s = this;
+        setTimeout(() => {
+            Promise.all(
+                Array.from(document.images).filter(img => !img.complete).map(
+                    img => new Promise(resolve => { img.onload = img.onerror = resolve; }))).then(() => {
+                        s.setState({loaded: 1});
+                        let b = document.getElementsByTagName("body")[0];
+                        b.classList.add("scroll");
+            });
+        }, 1300);
+        window.addEventListener("scroll", this.handleScroll);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handleScroll);
+    }
+
+    handleScroll(e) {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            /* do stuff */
+        }
     }
 
     displayMusic() {
@@ -33,7 +61,7 @@ class App extends Component {
             socials.push(
                 <a className="footer-social-link" href={`${value}`}>
                     <div className="footer-social">
-                        <img className={`${key} footer-social-img`} src={`${key}.png`}/>
+                        <img src={`${key}.png`}/>
                     </div>
                 </a>
             );
@@ -41,10 +69,28 @@ class App extends Component {
         return(<div className="footer-socials">{socials}</div>);
     }
 
+    displayStreamingLinks() {
+        let links = []
+        for (const [key, value] of Object.entries(MUSIC_LINKS)) {
+            links.push(<div className="music-link" id={`${key}`} onClick={ () => { window.open(value) }}/>);
+            links.push(<div className="vr"/>);
+        }
+        links.pop();
+        return(<section id="music-links">{links}</section>);
+    }
+
+    displayLoading() {
+        if (!this.state.loaded) {
+            return(<div id="loading"><div id="emblem-clean"/></div>);
+        }
+        return(<div id="loading" className="fade-out"/>)
+    }
+
     render() {
         return(
             <div id="main-contain">
-                <div id="background"/>
+                { this.displayLoading() }
+                <div id="background" className="derp"/>
                 <nav>
                     <ul>
                         <li><a href="#">HOME</a></li>
@@ -60,20 +106,11 @@ class App extends Component {
                         <img id="emblem" src="emblem.gif"/>
                         <img id="logo" src="logo.png"/>
                     </header>
-                    <section id="music-links">
-                        <div className="music-link" id="spotify"/>
-                        <div className="vr"/>
-                        <div className="music-link" id="apple"/>
-                        <div className="vr"/>
-                        <div className="music-link" id="google"/>
-                        <div className="vr"/>
-                        <div className="music-link" id="amazon"/>
-                    </section>
-
+                    { this.displayStreamingLinks() }
                 </section>
 
                 <section id="news" className="even">
-                    <img src="CAROUSEL/MERCH.jpg"/>
+                    <img src="MERCH.png"/>
                 </section>
 
                 <section id="music" className="odd">

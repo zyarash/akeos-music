@@ -7,9 +7,9 @@ const SOCIAL_LINKS = {
 
 const MUSIC_LINKS = {
   "spotify": "https://open.spotify.com/artist/01GwQuZRU4oG83fF2ZOyQs",
-  "apple_music": "https://music.apple.com/us/artist/akeos/1197196877",
-  "google_play": "https://play.google.com/store/music/artist/Akeos?id=Ajktxybavn6gu3qcxjwyjrvquie&hl=en",
-  "amazon_music": "https://www.amazon.com/s?k=Akeos", 
+  "apple": "https://music.apple.com/us/artist/akeos/1197196877",
+  "google": "https://play.google.com/store/music/artist/Akeos?id=Ajktxybavn6gu3qcxjwyjrvquie&hl=en",
+  "amazon": "https://www.amazon.com/s?k=Akeos", 
 }
 
 function Release(name, path, link) {
@@ -45,4 +45,4 @@ const RELEASES = [
 
 const MAILING_LIST_LINK = "https://www.toneden.io/akeos/post/join-the-akeos-mailing-list";
 
-export { MAILING_LIST_LINK, SOCIAL_LINKS, RELEASES };
+export { MAILING_LIST_LINK, MUSIC_LINKS, SOCIAL_LINKS, RELEASES };
