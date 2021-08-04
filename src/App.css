@@ -1,0 +1,449 @@
+@font-face {
+   font-family: PROXIMANOVA;
+   src: url("ProximaNova-Regular.otf");
+ }
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-family: PROXIMANOVA, monospace;
+    color: #fff;
+}
+
+body {
+    background: #000;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 8vw;
+    position: relative;
+}
+
+section.odd {
+    background: rgba(0, 0, 0, 0);
+}
+
+section.even  {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+header {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+nav > ul {
+    display: flex;
+    margin-bottom: 0;
+    padding-left: 0;
+    background: #000;
+}
+
+nav > ul > li {
+    display: flex;
+}
+
+nav > ul > li > a {
+    display: flex;
+    justify-content: center;
+    padding: 30px 50px;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: 200;
+    transition: background 600ms, color 600ms;
+    color: #fff;
+}
+
+nav > ul > li > a:hover {
+    background: #fff;
+    color: #000;
+}
+
+#main-contain {
+    display: flex;
+    flex-flow: column;
+}
+
+#background {
+    background: #000;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center 10px;
+    opacity: 0.15;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+/************************************
+*              BANNER               *
+************************************/
+#banner {
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    min-height: 600px;
+}
+
+#emblem {
+    user-select: none;
+    filter: drop-shadow(2px 4px 6px black)
+}
+
+#logo {
+    position: absolute;
+    user-select: none;
+}
+
+
+/************************************
+*            MUSIC LINKS            *
+************************************/
+#music-links {
+    display: flex;
+    padding: 0 0;
+}
+
+.music-link {
+    width: 90px;
+    height: 90px;
+    padding: 0 120px;
+    transition: opacity 300ms;
+    cursor: pointer;
+}
+
+.music-link:hover {
+    opacity: 0.5
+}
+
+#spotify {
+    background-image: url("spotify.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#amazon {
+    background-image: url("amazon.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#apple {
+    background-image: url("apple.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#google {
+    background-image: url("google.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.vr {
+    width: 2px;
+    height: 100px;
+    background-color: #504646; 
+    opacity: 0.5;
+    border-radius: 10px;
+}
+
+/************************************
+*             NEWS                  *
+************************************/
+#news {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#news > img {
+    width: 100%;
+}
+
+/************************************
+*             MUSIC                 *
+************************************/
+#music {
+    padding: 100px 8vw;
+}
+
+#music-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    grid-gap: 40px;
+}
+
+.release {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.music-img {
+    width: 100%;
+    height: 100%;
+    transition: transform 200ms;
+}
+
+.music-img:hover {
+    transform: scale(85%);
+}
+
+#tour {
+    flex-flow: column;
+}
+
+.tour-line {
+    width: 100%;
+    min-height: 75px;
+    border: 1px solid #000;
+    display: flex;
+    font-weight: 200;
+    letter-spacing: 2px;
+    flex-flow: row;
+    align-items: center;
+    font-size: 16px;
+    user-select: none;
+    cursor: pointer;
+}
+
+a.show {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+}
+
+.tour-line > div {
+    margin: 10px;
+}
+
+.tour-line:hover {
+    opacity: 0.8;
+}
+
+.odd-tour-line {
+    background: rgba(0,0,0, 0.5);
+    color: #fff;
+}
+
+.even-tour-line {
+    background: rgba(100,100,100, 0.6);
+    color: #000;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: #fff;
+}
+
+.location-info {
+    display: flex;
+    flex-flow: column;
+    letter-spacing: 2px;
+    font-weight: 200;
+    width: 30%;
+}
+
+.show-date {
+    width: 30%;
+}
+
+.show-name {
+    width: 30%;
+}
+
+.ticket-button {
+    z-index: 100;
+}
+
+.emblem-nav.right {
+    right: 0;
+}
+
+#mailing {
+    display: flex;
+    flex-flow: column;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    user-select: none;
+    transition: font-size 100ms;
+    cursor: pointer;
+}
+
+.mail {
+    background: url("mail.png");
+    width: 120px;
+    height: 120px;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mail-stamp {
+    background: url("mail-stamp.png");
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+}
+
+#mailing:hover .mail {
+    background: url("mailopen.png");
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+}
+
+#mailing .mail .mail-stamp {
+    transition: margin-bottom 300ms, opacity 300ms;
+}
+
+#mailing:hover .mail .mail-stamp {
+    margin-bottom: 100px;
+    opacity: 0;
+}
+
+#mailing .mail-text {
+    transition: transform 100ms;
+}
+
+#mailing:hover .mail-text {
+    transform: scale(1.15);
+}
+
+footer {
+    padding: 20px;
+    background: #000;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-text {
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: 10px;
+}
+
+.footer-socials {
+    display: flex;
+}
+
+.footer-social {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
+    margin: 0px 10px 20px 10px;
+}
+
+.footer-social-img {
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-height: 900px) and (min-width: 900px) {
+    #banner {
+        min-height: 900px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .music-link {
+        width: 6.5vw;
+        height: 6.5vw;
+        padding: 0 8.6vw;
+        min-height: 30px;
+        min-width: 30px;
+    }
+
+    .vr {
+        height: 9vw;
+    }
+
+    #news > img {
+        width: 700px;
+    }
+
+    .tour-line {
+        font-size: 1.2vw;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    section {
+        padding: 50px 8vw;
+    }
+
+    #banner {
+        height: calc(100vh - 84px);
+    }
+
+    #logo {
+        width: 94vw;
+    }
+
+    #emblem {
+        width: 85vw;
+    }
+
+    #music {
+        padding: 50px 8vw;
+    }
+
+    nav > ul > li > a {
+        font-size: 1.9vw;
+        padding-left: 5.9vw;
+        padding-right: 5.9vw;
+    }
+
+    #music-grid {
+        grid-gap: 20px;
+    }
+
+    #mailing {
+        font-size: 4vw;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #news {
+        padding-left: 8vw;
+        padding-right: 8vw;
+    }
+    #news > img {
+        width: 100%;
+    }
+    .tour-line {
+        font-size: 10px;
+    }
+}
