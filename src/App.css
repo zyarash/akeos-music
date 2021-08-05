@@ -21,7 +21,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 8vw;
+    padding: 100px 20vw;
     position: relative;
 }
 
@@ -243,7 +243,6 @@ nav > ul > li > a:hover {
 *             MUSIC                 *
 ************************************/
 #music {
-    padding: 100px 8vw;
 }
 
 #music-grid {
@@ -485,7 +484,6 @@ footer {
     }
 
     #music {
-        padding: 50px 8vw;
     }
 
     nav > ul > li > a {
@@ -521,9 +519,8 @@ footer {
 
 @media only screen and (max-width: 800px) {
     #news {
-        padding-left: 8vw;
-        padding-right: 8vw;
     }
+
     #news > img {
         width: 100%;
     }
