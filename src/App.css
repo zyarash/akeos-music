@@ -98,9 +98,9 @@ nav > ul > li > a:hover {
 
 #loading {
     display: flex;
-    position: absolute;
+    position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: fill-available;
     background: #000;
     overflow: hidden;
     z-index: 100;
@@ -230,7 +230,14 @@ nav > ul > li > a:hover {
 
 #news > img {
     width: 100%;
+    transition: transform 300ms;
+    cursor: pointer;
 }
+
+#news:hover > img {
+    transform: scale(1.1);
+}
+
 
 /************************************
 *             MUSIC                 *
@@ -385,7 +392,7 @@ a.show {
 }
 
 #mailing .mail-text {
-    transition: transform 100ms;
+    transition: transform 100ms, -webkit-transform 100ms;
 }
 
 #mailing:hover .mail-text {
@@ -493,6 +500,22 @@ footer {
 
     #mailing {
         font-size: 4vw;
+    }
+
+    .mail.hover {
+        background: url("mailopen.png");
+        width: 120px;
+        height: 120px;
+        background-size: cover;
+    }
+    
+    .mail-stamp.hover {
+        margin-bottom: 100px;
+        opacity: 0;
+    }
+    
+    .mail-text.hover {
+        -webkit-transform: scale(1.15, 1.15);
     }
 }
 

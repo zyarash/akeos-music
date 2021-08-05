@@ -35,8 +35,18 @@ class App extends Component {
     }
 
     handleScroll(e) {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            /* do stuff */
+        let x = document.getElementsByClassName("mail")[0]
+        let y = document.getElementsByClassName("mail-stamp")[0]
+        let z = document.getElementsByClassName("mail-text")[0]
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 84) {
+            x.classList.add("hover");
+            y.classList.add("hover");
+            z.classList.add("hover");
+        }
+        else {
+            x.classList.remove("hover");
+            y.classList.remove("hover");
+            z.classList.remove("hover");
         }
     }
 
@@ -110,7 +120,7 @@ class App extends Component {
                 </section>
 
                 <section id="news" className="even">
-                    <img src="MERCH.png"/>
+                    <img src="MERCH.png" onClick={ () => { window.open("https://www.dubhub.co/") }}/>
                 </section>
 
                 <section id="music" className="odd">
