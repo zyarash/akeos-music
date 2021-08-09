@@ -1,3 +1,5 @@
+const MAILING_LIST_LINK = "https://www.toneden.io/akeos/post/join-the-akeos-mailing-list";
+
 const SOCIAL_LINKS = {
   "twitter": "https://twitter.com/akeos_",
   "facebook": "https://facebook.com/akeostunes",
@@ -8,9 +10,10 @@ const SOCIAL_LINKS = {
 const MUSIC_LINKS = {
   "spotify": "https://open.spotify.com/artist/01GwQuZRU4oG83fF2ZOyQs",
   "apple": "https://music.apple.com/us/artist/akeos/1197196877",
-  "google": "https://play.google.com/store/music/artist/Akeos?id=Ajktxybavn6gu3qcxjwyjrvquie&hl=en",
+  "google": "https://music.youtube.com/channel/UCq07lKTiw0Os27BBbz_Ay_g",
   "amazon": "https://www.amazon.com/s?k=Akeos", 
 }
+
 
 function Release(name, path, link) {
   this.name = name;
@@ -43,6 +46,39 @@ const RELEASES = [
   new Release("LABRYINTH EP", "LABRYINTHEP.png", "https://nsd.lnk.to/NSDBL081"),
 ]
 
-const MAILING_LIST_LINK = "https://www.toneden.io/akeos/post/join-the-akeos-mailing-list";
+
+function Tour(date, name, venue, loc, sk_link, ticket_link, past) {
+    this.date = date;
+    this.name = name;
+    this.venue = venue;
+    this.loc = loc;
+    this.sk_link = sk_link;
+    this.ticket_link = ticket_link;
+}
+
+const TOURS = [
+    new Tour(
+        "SEPTEMBER 24, 2021",
+        "LOST LANDS",
+        "LEGEND VALLEY",
+        "THORNVILLE OH, USA",
+        "https://www.songkick.com/festivals/1632659-lost-lands/id/39935702-lost-lands-2021",
+        "https://www.lostlandsfestival.com/",
+        0
+    ),
+    new Tour(
+        "APRIL 03, 2020",
+        "BASS INFERNO",
+        "CERVANTES' MASTERPIECE BALLROOM",
+        "DENVER CO, USA",
+        "",
+        "",
+        1
+    ),
+    new Tour(
+    ),
+    new Tour(
+    )
+]
 
 export { MAILING_LIST_LINK, MUSIC_LINKS, SOCIAL_LINKS, RELEASES };
