@@ -37,7 +37,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
-            filename: './dist/index.html',
+            filename: './index.html',
             favicon: "./assets/images/favicon.png",
         }),
     ],
