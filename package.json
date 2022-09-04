@@ -1,8 +1,11 @@
 {
     "name": "akeos-music",
+    "description": "Website for electronic music artist Akeos",
     "version": "1.0.0",
-    "private": false,
     "proxy": "http://localhost:3000",
+    "engines": {
+        "node": "17.x"
+    },
     "devDependencies": {
         "@babel/core": "^7.18.13",
         "@babel/preset-env": "^7.18.10",
