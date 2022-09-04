@@ -29,7 +29,7 @@
     "scripts": {
         "build": "webpack --mode=production",
         "build-dev": "webpack --mode=development",
-        "start": "npm run build && nodemon ./main.js",
+        "start": "nodemon ./main.js",
         "start-dev": "npm run build-dev && node ./main.js",
         "watch": "webpack --watch --mode=development",
         "heroku-prebuild": "npm install --dev"
