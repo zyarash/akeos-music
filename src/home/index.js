@@ -1,10 +1,12 @@
 /*
- *  filename: index.js
+ *  filename: src/home/index.js
  **/
 
 /** External imports **/
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { 
+    createRoot
+} from 'react-dom/client';
 import {
     BrowserRouter,
     Route,
@@ -16,7 +18,9 @@ import App from './App';
 import Error from './Error';
 
 
-ReactDOM.render((
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
@@ -24,6 +28,5 @@ ReactDOM.render((
                 <Route component={Error} />
             </Routes> 
         </BrowserRouter>
-    </React.StrictMode>),
-    document.getElementById('root')
+    </React.StrictMode>
 );

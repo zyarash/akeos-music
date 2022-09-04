@@ -7,7 +7,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: "./src/home/index.js",
     module: {
         rules: [
             {
@@ -37,12 +37,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             hash: true,
-            filename: './index.html',
+            filename: './home.html',
             favicon: "./assets/images/favicon.png",
+            templateContent: '<body><div id="root"></div></body>',
         }),
     ],
     output: {
-        filename: 'index_bundle.js',
+        filename: 'home.bundle.js',
         path: path.resolve(__dirname, "dist"),
     },
 };
