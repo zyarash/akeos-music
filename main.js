@@ -1,21 +1,26 @@
-/***
- * main.js
- */
+/*
+ *  filename: main.js
+ *  description: Main server entry point
+ **/
 
-const express = require("express")
-const path = require("path")
+/** System imports **/
+const path = require('path')
+
+/** External imports **/
+const express = require('express')
+
+/** Project imports **/
+//-
+
 
 const app = express()
-const port = process.env.PORT || "3000";
+const port = process.env.PORT || '3000';
 
+app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use(express.static(path.join(__dirname, "build")));
-
-
-app.get("*", (request, response) => {
-    response.sendFile(path.join(__dirname, "build", "index.html"));
+app.get('*', (req, res) => {
+    res.render('index.html');
 });
-
 
 app.listen(port, () => {
     console.log(`Listetning on port ${port}`);

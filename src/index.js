@@ -1,18 +1,29 @@
+/*
+ *  filename: index.js
+ **/
+
+/** External imports **/
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+    BrowserRouter,
+    Route,
+    Routes,
+} from 'react-router-dom';
 
+/** Project imports **/
 import App from './App';
 import Error from './Error';
 
+
 ReactDOM.render((
     <React.StrictMode>
-        <Router>
-        <Switch>
-            <Route exact path="/" component={App} />
-            <Route component={Error} />
-        </Switch> 
-        </Router>
+        <BrowserRouter>
+            <Routes>
+                <Route exact path="/" component={App} />
+                <Route component={Error} />
+            </Routes> 
+        </BrowserRouter>
     </React.StrictMode>),
     document.getElementById('root')
 );
