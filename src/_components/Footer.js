@@ -1,9 +1,10 @@
 /*
- *  filename: src/global/Footer.js
+ *  filename: src/_components/Footer.js
+ *  description: -
  **/
 
 /** External imports **/
-import React, { Component } from 'react';
+import React from 'react';
 
 /** Project imports **/
 //-
@@ -15,7 +16,7 @@ const SOCIAL_DATA = {
     "soundcloud": "https://soundcloud.com/akeos",
 };
 
-class Footer extends Component {
+class Footer extends React.Component {
     constructor(props) {
         super(props);
         this.socialIcons = this.socialIcons.bind(this);

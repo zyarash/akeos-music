@@ -1,26 +1,5 @@
-@font-face {
-   font-family: PROXIMANOVA;
-   src: url("ProximaNova-Regular.otf");
- }
-
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-family: PROXIMANOVA, monospace;
-    color: #fff;
-}
-
-body {
-    background: #000;
-    overflow: hidden;
-}
 
 section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding: 100px 20vw;
     position: relative;
 }

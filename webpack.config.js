@@ -3,18 +3,25 @@
  *  description: --
  **/
 
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: "./src/home/index.js",
+    entry: {
+        home: './src/home/index.js',
+        yuuni: './src/yuuni/index.js',
+    },
     module: {
         rules: [
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+            },
             {
                 test: /\.?js$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: "babel-loader",
+                    loader: 'babel-loader',
                     options: {
                         presets: ['@babel/preset-env', '@babel/preset-react']
                     }
@@ -22,32 +29,56 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                exclude: /node_modules/,
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.(jpe?g|png|gif|svg|mp4)$/i, 
-                type: "asset/resource"
+                exclude: /node_modules/,
+                type: 'asset/resource'
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                exclude: /node_modules/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader',
+                ],
             },
         ]
     },
     devServer: {
-        static: "./dist",
+        static: './dist',
         hot: true
     },
     plugins: [
         new HtmlWebpackPlugin({
+            inject: true,
             filename: './home.html',
-            favicon: "./assets/images/favicon.png",
+            favicon: './assets/images/favicon.png',
             templateContent: '<body><div id="root"></div></body>',
+            chunks: ['home'],
+            title: 'Akeos - Home',
+        }),
+        new HtmlWebpackPlugin({
+            inject: true,
+            filename: './yuuni.html',
+            favicon: './assets/images/favicon.png',
+            templateContent: '<body><div id="root"></div></body>',
+            chunks: ['yuuni'],
+            title: 'Akeos - Yuuni',
         }),
     ],
     output: {
-        filename: 'home.bundle.js',
-        path: path.resolve(__dirname, "dist"),
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
     },
     resolve: {
         alias: {
-            Global: path.resolve(__dirname, './src/global'),
+            Components: path.resolve(__dirname, './src/_components'),
+            CSS: path.resolve(__dirname, './assets/scss'),
+            Fonts: path.resolve(__dirname, './assets/fonts'),
             Images: path.resolve(__dirname, './assets/images'),
         }
     }

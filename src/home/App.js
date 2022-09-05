@@ -1,13 +1,14 @@
 /*
  *  filename: src/home/App.js
+ *  description: -
  **/
 
 /** External imports **/
-import React, { Component } from 'react';
+import React from 'react';
 
 /** Project imports **/
-import Navbar from 'Global/Navbar';
-import Footer from 'Global/Footer';
+import Navbar from 'Components/Navbar';
+import Footer from 'Components/Footer';
 
 import Masthead from './Masthead';
 import Music from './Music';
@@ -17,14 +18,11 @@ import './App.css';
 
 import { MAILING_LIST_LINK, RELEASES} from "./CONSTANTS";
 
-
-class App extends Component {
+class App extends React.Component {
 
     constructor(props) {
         super(props);
         this.displayLoading = this.displayLoading.bind(this);
-        this.displayStreamingLinks = this.displayStreamingLinks.bind(this);
-        this.displayMusic = this.displayMusic.bind(this);
         this.handleScroll = this.handleScroll.bind(this);
         this.state = { loaded: 0 };
     }
@@ -63,34 +61,6 @@ class App extends Component {
         }
     }
 
-    async displayMusic() {
-        const data = await fetch('/api/releases');
-        console.log(data);
-
-        let releases = [];
-        //for (const release of RELEASES) {
-        //    releases.push(
-        //        <a href={release.link}>
-        //            <div id={release.name} className="release">
-        //                <img className="music-img" src={release.path} alt={release.name}/>
-        //            </div>
-        //        </a>
-        //    );
-        //}
-                                                                                                               
-        return (<div id="music-grid">{releases}</div>)
-    }
-
-    displayStreamingLinks() {
-        let links = []
-        for (const [key, value] of Object.entries(MUSIC_LINKS)) {
-            links.push(<div className="music-link" id={`${key}`} onClick={ () => { window.open(value) }}/>);
-            links.push(<div className="vr"/>);
-        }
-        links.pop();
-        return(<section id="music-links">{links}</section>);
-    }
-
     displayLoading() {
         if (!this.state.loaded) {
             return(<div id="loading"><div id="emblem-clean"/></div>);
@@ -99,18 +69,19 @@ class App extends Component {
     }
 
     render() {
-        return(
+        const sections = [
+            <Navbar />,
+            <Masthead />,
+            <Music />
+        ];
+
+        return (
             <React.Fragment>
+
                 { this.displayLoading() }
                 <div id="background" className="derp"/>
-                <Navbar />
-                <Masthead />
 
-                <section id="news" className="even">
-                    <img src="MERCH.png" onClick={ () => { window.open("https://www.dubhub.co/") }}/>
-                </section>
-
-                <Music />
+                { sections }
 
                 <section id="tour" className="even">
                     <div className="tour-line odd-tour-line">

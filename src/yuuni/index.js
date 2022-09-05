@@ -1,6 +1,5 @@
 /*
- *  filename: src/home/index.js
- *  background: -
+ *  filename: src/yuuni/index.js
  **/
 
 /** External imports **/
@@ -14,13 +13,10 @@ import {
     Routes,
 } from 'react-router-dom';
 
-/** Project imports - JS **/
+/** Project imports **/
 import Error from 'Components/Error';
 
 import App from './App';
-
-/** Project imports - CSS **/
-import 'CSS/global.scss';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -28,7 +24,7 @@ root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<App />} />
+                <Route path='/yuuni' element={<App />} />
                 <Route element={<Error />} />
             </Routes> 
         </BrowserRouter>

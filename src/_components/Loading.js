@@ -1,15 +1,16 @@
 /*
- *  filename: src/global/Loading.js
+ *  filename: src/_components/Loading.js
+ *  description: -
  **/
 
 /** External imports **/
-import React, { Component } from 'react';
+import React from 'react';
 
 /** Project imports **/
 //-
 
 
-class Loading extends Component {
+class Loading extends React.Component {
     constructor(props) {
         super(props);
     }

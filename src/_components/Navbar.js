@@ -1,14 +1,15 @@
 /*
- *  filename: src/global/Navbar.js
+ *  filename: src/_components/Navbar.js
+ *  description: -
  **/
 
 /** External imports **/
-import React, { Component } from 'react';
+import React from 'react';
 
 /** Project imports **/
 //-
 
-class Navbar extends Component {
+class Navbar extends React.Component {
     render() {
         return(
             <nav>

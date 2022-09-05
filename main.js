@@ -18,10 +18,6 @@ const port = process.env.PORT || '3000';
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist/home.html'));
-});
-
 app.get('/api/releases', async (req, res) => {
     try {
         const releases = await Releases.getAll();
@@ -30,6 +26,14 @@ app.get('/api/releases', async (req, res) => {
         console.log(error);
         res.json({ 'release': {} });
     }
+});
+
+app.get('/yuuni', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/yuuni.html'));
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/home.html'));
 });
 
 app.listen(port, () => {
