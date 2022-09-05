@@ -24,8 +24,8 @@ root.render(
     <React.StrictMode>
         <BrowserRouter>
             <Routes>
-                <Route exact path="/" component={App} />
-                <Route component={Error} />
+                <Route path='/' element={<App />} />
+                <Route element={<Error />} />
             </Routes> 
         </BrowserRouter>
     </React.StrictMode>

@@ -36,7 +36,6 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            hash: true,
             filename: './home.html',
             favicon: "./assets/images/favicon.png",
             templateContent: '<body><div id="root"></div></body>',
@@ -46,4 +45,10 @@ module.exports = {
         filename: 'home.bundle.js',
         path: path.resolve(__dirname, "dist"),
     },
+    resolve: {
+        alias: {
+            Global: path.resolve(__dirname, './src/global'),
+            Images: path.resolve(__dirname, './assets/images'),
+        }
+    }
 };

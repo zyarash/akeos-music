@@ -1,20 +1,5 @@
 const MAILING_LIST_LINK = "https://www.toneden.io/akeos/post/join-the-akeos-mailing-list";
 
-const SOCIAL_LINKS = {
-  "twitter": "https://twitter.com/akeos_",
-  "facebook": "https://facebook.com/akeostunes",
-  "instagram": "https://instagram.com/akeos_",
-  "soundcloud": "https://soundcloud.com/akeos",
-}
-
-const MUSIC_LINKS = {
-  "spotify": "https://open.spotify.com/artist/01GwQuZRU4oG83fF2ZOyQs",
-  "apple": "https://music.apple.com/us/artist/akeos/1197196877",
-  "google": "https://music.youtube.com/channel/UCq07lKTiw0Os27BBbz_Ay_g",
-  "amazon": "https://www.amazon.com/s?k=Akeos", 
-}
-
-
 function Release(name, path, link) {
   this.name = name;
   this.path = "/MUSIC/" + path;
@@ -81,4 +66,4 @@ const TOURS = [
     )
 ]
 
-export { MAILING_LIST_LINK, MUSIC_LINKS, SOCIAL_LINKS, RELEASES };
+export { MAILING_LIST_LINK, RELEASES };
