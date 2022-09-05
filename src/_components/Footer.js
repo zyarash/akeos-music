@@ -7,7 +7,9 @@
 import React from 'react';
 
 /** Project imports **/
-//-
+
+/** Project imports - CSS **/
+import 'CSS/_components/footer.scss';
 
 const SOCIAL_DATA = {
     "twitter": "https://twitter.com/akeos_",

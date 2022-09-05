@@ -21,6 +21,7 @@ import App from './App';
 
 /** Project imports - CSS **/
 import 'CSS/global.scss';
+import 'CSS/home/index.scss';
 
 const container = document.getElementById('root');
 const root = createRoot(container);

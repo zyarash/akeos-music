@@ -6,8 +6,11 @@
 /** External imports **/
 import React from 'react';
 
-/** Project imports **/
+/** Project imports - JS **/
 //-
+
+/** Project imports - CSS **/
+import 'CSS/_components/navbar.scss';
 
 class Navbar extends React.Component {
     render() {

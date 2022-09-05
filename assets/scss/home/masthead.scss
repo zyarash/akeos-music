@@ -1,0 +1,31 @@
+/*
+ *  filename: assets/scss/home/masthead.scss
+ *  description: -
+ **/
+
+header {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+#banner {
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    min-height: 600px;
+}
+
+#emblem {
+    user-select: none;
+    filter: drop-shadow(2px 4px 6px black);
+    transition: transform 300ms;
+}
+
+#logo {
+    position: absolute;
+    user-select: none;
+}

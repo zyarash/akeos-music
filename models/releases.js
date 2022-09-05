@@ -14,7 +14,7 @@ const StrapiService = require('../services/strapi.js')
 
 class Release {
     constructor({ release_name, release_fan_link, release_artwork }) {
-        this.name = release_name;
+        this.name = release_name.replace(' ', '-');
         this.link = release_fan_link;
         this.artwork = release_artwork.data.attributes.url;
     }

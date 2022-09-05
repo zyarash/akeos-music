@@ -3,10 +3,13 @@
  **/
 
 /** External imports **/
-import React, { Component } from 'react';
+import React from 'react';
 
-/** Project imports **/
+/** Project imports - JS **/
 //-
+
+/** Project imports - CSS **/
+import 'CSS/home/masthead.scss';
 
 const STREAMING_DATA = {
     'spotify': 'https://open.spotify.com/artist/01GwQuZRU4oG83fF2ZOyQs',
@@ -15,7 +18,7 @@ const STREAMING_DATA = {
     'amazon': 'https://www.amazon.com/s?k=Akeos', 
 }
 
-class Masthead extends Component {
+class Masthead extends React.Component {
     constructor(props) {
         super(props);
         this.streamingIcons = this.streamingIcons.bind(this);

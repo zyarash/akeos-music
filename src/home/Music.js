@@ -47,6 +47,7 @@ class Music extends React.Component {
     render() {
         return (
             <section id="music" className="odd">
+                <h2 className='section-header'> Music </h2>
                 <div id='music-grid'>
                     { this.releases() }
                 </div>
