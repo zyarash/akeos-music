@@ -3,20 +3,18 @@
  *  description: -
  **/
 
-header {
-    display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-}
-
-#banner {
-    padding: 0;
-    height: 100vh;
+section#masthead {
+    height: 70vh;
     display: flex;
     flex-flow: column;
-    min-height: 600px;
+
+    header {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+    }
 }
 
 #emblem {
@@ -28,4 +26,58 @@ header {
 #logo {
     position: absolute;
     user-select: none;
+}
+
+#streaming-link-contain {
+    display: flex;
+    padding: 0 0;
+}
+
+.streaming-link {
+    width: 90px;
+    height: 90px;
+    padding: 0 120px;
+    transition: opacity 300ms, transform 300ms;
+    cursor: pointer;
+}
+
+.streaming-link:hover {
+    transform: scale(0.9);
+    opacity: 0.5
+}
+
+#spotify {
+    background-image: url("Images/streaming-icons/spotify.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#amazon {
+    background-image: url("Images/streaming-icons/amazon.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#apple {
+    background-image: url("Images/streaming-icons/apple.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#google {
+    background-image: url("Images/streaming-icons/google.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.vr {
+    width: 2px;
+    height: 100px;
+    background-color: #504646; 
+    opacity: 0.5;
+    border-radius: 10px;
 }
